@@ -1,6 +1,6 @@
 // components/EarthquakeMarker.js
 import React from 'react';
-import { Marker, Popup } from 'react-leaflet';
+import { Marker, Popup, Tooltip } from 'react-leaflet';
 import L from 'leaflet';
 
 const earthquakeIcon = 
@@ -10,6 +10,7 @@ new L.Icon({
   iconAnchor: [16, 32],  
   popupAnchor: [0, -32],
 });
+
 
 const EarthquakeMarker = ({ feature }) => {
   const { coordinates } = feature.geometry;
@@ -31,10 +32,17 @@ const EarthquakeMarker = ({ feature }) => {
     timeZoneName: 'short',
   });
 
+
   return (
 
     // Marker to point out the location
     <Marker position={[coordinates[1], coordinates[0]]} icon={earthquakeIcon}>  
+
+      <Tooltip direction="top" offset={[0, -32]} opacity={1} permanent={false}>
+        {place}
+      </Tooltip>
+
+
 
     {/* Pop up appears when we click on the marker  */}
       <Popup>

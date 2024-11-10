@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useEarthquakeData } from './hooks/useEarthquakeData';
 import EarthquakeMap from './components/EarthquakeMap';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -8,6 +8,7 @@ import {TailSpin } from 'react-loader-spinner';
 
 const App = () => {
   const { data, error } = useEarthquakeData();
+  const [selectedPlace, setSelectedPlace] = useState(null);
 
   if (error) return <div className="error">Error: {error}</div>;
   if (!data) return <div className="loading">
@@ -23,11 +24,23 @@ const App = () => {
   />
   </div>;
 
+// Extract the places from the earthquake data
+const places = data.features.map(feature => feature.properties.place);
+
+// Function to handle place selection
+const handlePlaceSelect = (place) => {
+  const feature = data.features.find(f => f.properties.place === place);
+  if (feature) {
+    const { coordinates, status, url } = feature.geometry;
+    setSelectedPlace({ place, coordinates });
+  }
+};
+
   return (
     <div>
-    <Header />
+    <Header places={places} onPlaceSelect={handlePlaceSelect} /> 
     <ErrorBoundary>
-      <EarthquakeMap earthquakeData={data} />
+      <EarthquakeMap earthquakeData={data} selectedPlace={selectedPlace}/>
     </ErrorBoundary>
     </div>
   );
