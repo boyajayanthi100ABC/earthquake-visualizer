@@ -1,0 +1,37 @@
+.title {
+    font-size: 26px;
+    font-weight: 600;
+  }
+
+.header-container {
+    height: 7vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: deepskyblue;
+    border: 2px solid deepskyblue;
+    margin-bottom: 20px;
+  }
+
+  .filters-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+  @media screen and (max-width: 768px) {
+    .filters-container{
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .title {
+        font-size: 16px;
+      }
+  }
+  
+
+ 

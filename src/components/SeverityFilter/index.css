@@ -1,0 +1,29 @@
+.severity-filter {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+
+ 
+  @media screen and (max-width: 768px) {
+    .severity-filter{
+        margin-left: 0;
+        align-self: flex-start;
+    }
+  }
+  
+  
+  .severity-filter-label {
+    margin-right: 10px;
+    font-weight: 400;
+  }
+  
+  .severity-filter-select {
+    padding: 0.5rem;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

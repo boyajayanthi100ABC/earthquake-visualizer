@@ -1,14 +1,20 @@
 import React from 'react';
 import SearchBar from '../SearchBar';
+import SeverityFilter from '../SeverityFilter';
 
-const Header = ({ places, onPlaceSelect }) => {
+import './index.css'
+
+const Header = ({ places, onPlaceSelect, setIntensity, intensity }) => {
   return (
     <div>
-      <div className="header-div">
-        <h2>Earthquake Visualization Application</h2>
+      <div className="header-container">
+        <p className="title"> Earthquake Visualization Application</p>
       </div>
-      <div className="row-center">
+      <div className="filters-container">
         <SearchBar places={places} onPlaceSelect={onPlaceSelect} />
+       
+        <SeverityFilter intensity={intensity} setIntensity={setIntensity} />
+       
       </div>
     </div>
   );

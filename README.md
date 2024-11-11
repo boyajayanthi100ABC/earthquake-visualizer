@@ -108,6 +108,13 @@ Understanding seismic activity and patterns across different regions can be valu
 ### 5. Zoom In and Out
 This feature allows users to zoom in and out of the map for a more customized viewing experience.
 
+### 6. Enhanced Visualization**: 
+Adding color-coded markers based on earthquake severity to quickly communicate event intensity.
+
+### 7. Filteration according to the Intensity(Risk) Level**: 
+The risk level filter allows users to refine earthquake markers by Low, Medium, and High Intensity levels. This enables focused visualization of events based on magnitude, streamlining decision-making.
+
+
 ## Technical Stack
 
 - **React.js**: The primary framework used for building the front end of the application, with a focus on component-based architecture for modularity and reusability.
@@ -134,8 +141,7 @@ The application follows a clean and organized architecture to ensure maintainabi
 ## Future Enhancements
 
 Planned updates to further improve the user experience include:
-- **Filter Options**: Allowing users to filter events by magnitude, date, or region.
-- **Enhanced Visualization**: Adding color-coded markers based on earthquake severity to quickly communicate event intensity.
+- **Filter Options**: Allowing users to filter events by date, or region.
 - **Historical Data Access**: Enabling users to view past seismic activity data.
 
 ## Conclusion

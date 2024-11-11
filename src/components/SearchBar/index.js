@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import './index.css';
 
 const SearchBar = ({ places, onPlaceSelect }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [filteredPlaces, setFilteredPlaces] = useState(places);
+  const [filteredPlaces, setFilteredPlaces] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);  // Track dropdown visibility
+
+  useEffect(()=> {
+    setFilteredPlaces(places)
+    setSearchTerm("")
+  setIsDropdownOpen(false)
+  }, [places])
 
   const handleSearchChange = (event) => {
     const term = event.target.value.toLowerCase();
